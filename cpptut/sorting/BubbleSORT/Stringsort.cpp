@@ -4,11 +4,12 @@
 using namespace std;
 int main(){
     string s;
-    cin>>s;
-    string str;
+    char X;
+    cin>>s>>X;
+    string str="";
     for(int i=0;i<s.size();i++){
         if(s[i]>=(char) X){
-            cin>>str;
+            str+=s[i];
         }
     }
     cout<<endl<<str;
@@ -19,6 +20,7 @@ int main(){
                 swap(str[j],str[j+1]);
             }
         }
+        if(flag==true) break;
     }
     cout<<endl<<str;
 }

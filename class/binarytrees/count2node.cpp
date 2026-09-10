@@ -9,13 +9,13 @@ struct node{
         left=right=NULL;
     }
 };
-int countOnenodes(node*root){
+int count2nodes(node*root){
     if(root==NULL) return 0;
     else{
-        if((root->left!=NULL && root->right==NULL) || (root->left==NULL && root->right!=NULL)){
-            return 1+ countOnenodes(root->left)+countOnenodes(root->right);
+        if(root->left!=NULL && root->right!=NULL){
+            return 1+ count2nodes(root->left)+count2nodes(root->right);
         }
-        else return  countOnenodes(root->left)+countOnenodes(root->right);
+        else return  count2nodes(root->left)+count2nodes(root->right);
     }
 }
 int main(){
@@ -24,5 +24,5 @@ int main(){
     root->right=new node('C');
     root->left->left=new node('D');
     root->left->right=new node('E');
-    cout<<"The count of 1 nodes= "<<countOnenodes(root);
+    cout<<"The count of 2 nodes= "<<count2nodes(root);
 }
